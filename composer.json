@@ -1,0 +1,15 @@
+{
+    "name": "vendor/html-tags",
+    "description": "Componente para geração de Tags Html programaticamente.",
+    "authors": [
+        {
+            "name": "evandro",
+            "email": "evandroplacerda@email.here"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "HtmlTagsGenerator\\": "src/HtmlTagsGenerator/"
+        }
+    }
+}

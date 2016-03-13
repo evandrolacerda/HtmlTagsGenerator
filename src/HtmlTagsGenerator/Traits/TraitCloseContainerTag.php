@@ -5,7 +5,7 @@ namespace HtmlTagsGenerator\Traits;
 trait TraitCloseContainerTag
 {
 
-    protected function render()
+    public function render()
     {
         $html = sprintf("<%s ", $this->tagName);
 
@@ -17,14 +17,14 @@ trait TraitCloseContainerTag
         
         
         $html = trim($html);
-        $html .= ">\n";
+        $html .= ">" . PHP_EOL;
         if ($this->hasChild()) {
             foreach ($this->children as $item) {
-                $html .= $item . "\n";
+                $html .= (string) $item . "\n";
             }
         }
         
-         $html .= sprintf("</%s>\n", $this->tagName );
+         $html .= sprintf("</%s>%s", $this->tagName, PHP_EOL );
          
          return $html;
     }

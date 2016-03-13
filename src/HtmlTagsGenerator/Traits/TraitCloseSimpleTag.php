@@ -5,7 +5,7 @@ namespace HtmlTagsGenerator\Traits;
 trait TraitCloseSimpleTag
 {
 
-    protected function render()
+    public function render()
     {
         $html = sprintf("<%s ", $this->tagName );
         

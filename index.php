@@ -124,7 +124,7 @@ error_reporting(E_ALL);
                     $form->addChild( $divButton);
                     //$form->addChild( $hiperlink );
                     //$form->addChild( $select );
-                    echo $form;
+                    echo $form->render();
                     ?>
                 </div>
 

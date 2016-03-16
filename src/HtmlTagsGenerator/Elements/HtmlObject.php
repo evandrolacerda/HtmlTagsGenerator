@@ -43,7 +43,7 @@ abstract class HtmlObject
     
     public function addChild(\HtmlTagsGenerator\Interfaces\Renderizavel $child )
     {
-        if( $child instanceof HtmlObject ){
+        if( $child instanceof \HtmlTagsGenerator\Interfaces\Renderizavel ){
             $this->children[] = $child;
         }else{
             throw new \Exception('Child deve ser um objeto de uma classe filha de HtmlObject');
@@ -86,6 +86,8 @@ abstract class HtmlObject
         }else{
             $this->cssClass .= ' '. $className;
         }
+        
+        $this->addAttribute('class', $this->cssClass );
         return $this;
     }
     
@@ -102,6 +104,7 @@ abstract class HtmlObject
         }
         
         $this->cssClass = $newClasses;
+        $this->addAttribute('class', $this->cssClass );
         
         return $this;
     }
@@ -120,10 +123,9 @@ abstract class HtmlObject
     }
     
     
-    public function addElement( $element )
+    public function addElement(\HtmlTagsGenerator\Interfaces\Renderizavel $element )
     {
         return $this->addChild($element);
-    }
-    
+    }   
     
 }

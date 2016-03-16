@@ -26,12 +26,7 @@ abstract class HtmlObject
     abstract function render();
     
     public function __toString()
-    {
-        if( $this->cssClass )
-        {
-            $this->addAttribute('class', $this->cssClass );
-        }
-        
+    {              
         return $this->render();
     }
     
